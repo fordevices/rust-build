@@ -1,0 +1,39 @@
+pipeline {
+  agent any
+  stages {
+    stage('verify Cargo installation') {
+      steps {
+        sh 'cargo --version'
+      }
+    }
+    
+    stage('Clone the repo') {
+        steps {
+            echo 'clone the repo'
+            sh 'rm -fr rust-build'}
+            sh 'git clone redacted url'
+    }
+    
+    stage('compile') {
+      steps {
+        dir("rust-build") {
+            sh 'cargo build'
+        }
+      }
+    }
+    stage('run manually') {
+      steps {
+          dir("rust-build") {
+            sh './target/debug/rust-build'
+          }
+      }
+    }
+    stage('run with Cargo') {
+      steps {
+          dir("rust-build") {
+            sh 'cargo run'
+          }
+      }
+    }
+  }
+}

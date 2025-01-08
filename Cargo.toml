@@ -1,6 +1,8 @@
 [package]
-name = "rust-build"
+name = "tls-client"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+rustls = {version = "0.23.20", features = [ "logging" ]}
+webpki-roots = { version = "0.26.7" }
