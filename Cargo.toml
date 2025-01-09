@@ -1,8 +1,22 @@
 [package]
-name = "tls-client"
-version = "0.1.0"
+name = "rustls_post_quantum"
+version = "0.2.1"
 edition = "2021"
+rust-version = "1.71"
+license = "Apache-2.0 OR ISC OR MIT"
+readme = "README.md"
+description = "Experimental support for post-quantum key exchange in rustls"
+homepage = "https://github.com/rustls/rustls"
+repository = "https://github.com/rustls/rustls"
+categories = ["network-programming", "cryptography"]
+autobenches = false
 
 [dependencies]
-rustls = {version = "0.23.20", features = [ "logging" ]}
-webpki-roots = { version = "0.26.7" }
+rustls = "0.23.20"
+aws-lc-rs = "1.0.0"
+env_logger = "0.11"
+webpki-roots = "0.26"
+rustls-post-quantum = "0.2.1"
+
+[dev-dependencies]
+criterion = "0.5"
