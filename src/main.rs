@@ -1,3 +1,4 @@
+//! FIPS-203
 //! This is the simplest possible client using rustls-postquantum, based on
 //! `simpleclient.rs`.
 //!
